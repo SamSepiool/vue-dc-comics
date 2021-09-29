@@ -8,7 +8,7 @@
             </div>
             <nav>
                 <ul>
-                    <li v-for="(element, index) in menu" :key="index"><a :href="element.url">{{element.item}}</a></li>
+                    <li v-for="(element, index) in menu" :key="index"><a :class="{ active : element.current }" :href="element.url">{{element.item}}</a></li>
                 </ul>
             </nav>
 
