@@ -3,6 +3,7 @@
     <Header/>
     <main>
       <Content/>
+      <Services/>
     </main>
     
   </div>
@@ -11,13 +12,16 @@
 <script>
 import Header from "./components/Header.vue"
 import Content from "./components/Content.vue"
+import Services from "./components/Services.vue"
+
 
 
 export default {
   name: 'App',
   components: {
       Header,
-      Content
+      Content,
+      Services
   }
 }
 </script>
