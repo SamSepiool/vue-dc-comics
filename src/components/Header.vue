@@ -21,9 +21,7 @@
 <script>
 export default {
     name: 'Header',
-
     data(){
-
         return {
             menu:[
                 {
@@ -84,12 +82,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/style/variables";
-
 header {
     background-color: $white;
-    color: black;
     font-weight: bold;
-
     .container {
         display: flex;
         justify-content: space-between;
@@ -97,31 +92,24 @@ header {
 
         ul{
             display: flex;
-
             li{
                 display: flex;
                 align-items: center;
                 margin: 0 .625rem;
             }
-
+            
             a{
                 display: inline-block;
                 padding: 3.4375rem 0;
+                color: $primaryBlack;
 
                 &:active{
-                    color: $blue;
-                    box-shadow: 0px -5px 0px inset $blue; 
+                    color: $primaryBlue;
+                    box-shadow: 0px -5px 0px inset $primaryBlue; 
                 }
             }
         }
     }
-
    
-
 }
-
-
-
-
-
 </style>
