@@ -6,8 +6,11 @@
             <div class="container">
 
                 <ul class="main_list">
+
                     <li v-for="(element, index) in lists" :key="index" >
+
                         <h3>{{element.list}}</h3>
+
                         <ul>
                             <li v-for="(link , order) in element.links" href="links.url" :key="order">
                                 <a>{{link.linkName}}</a>
@@ -15,11 +18,19 @@
                         </ul>
 
                         <ul v-for="(elm, index) in element.subMenu" :key="index" >
+
+                            <li>
+                                <h3>{{elm.list}}</h3>
+                            </li>
+
                             <li v-for="(link , order) in elm.links" href="links.url" :key="order">
                                 <a>{{link.linkName}}</a>
                             </li>
+
                         </ul>
+
                     </li>
+
                 </ul>
             
             </div>
@@ -44,50 +55,52 @@ export default {
         return {
             lists:[
                 {
-                    list: "COMICS",
-                    links: [
-                        { linkName : "Characters", url : "#"},
-                        { linkName: "Comics", url : "#" },
-                        { linkName: "Movies", url : "#" },
-                        { linkName: "TV", url : "#" },
-                        { linkName: "Games", url : "#" },
-                        { linkName: "Videos", url : "#" },
-                        { linkName: "News", url : "#" }                       
-                    ],
-                    subMenu: {
-                    list: "SHOP",
-                    links: [
+                list: "COMICS",
+                links: [
+                    { linkName : "Characters", url : "#"},
+                    { linkName: "Comics", url : "#" },
+                    { linkName: "Movies", url : "#" },
+                    { linkName: "TV", url : "#" },
+                    { linkName: "Games", url : "#" },
+                    { linkName: "Videos", url : "#" },
+                    { linkName: "News", url : "#" }                       
+                ],
+                    subMenu: [
+                        {
+                        list: "SHOP",
+                        links: [
                         { linkName : "Shop DC", url : "#"},
                         { linkName : "Shop DC Collectibles", url : "#"}
                     ]
                 },
-                },
-                     {
-                    list: "DC",
-                    links: [
-                        { linkName : "Terms Of Use", url : "#"},
-                        { linkName : "Privacy Policy (New)", url : "#"},
-                        { linkName : "Ad Choices", url : "#"},
-                        { linkName : "Advertising", url : "#"},
-                        { linkName : "Jobs", url : "#"},
-                        { linkName : "Subscriptions", url : "#"},
-                        { linkName : "Talent Workshops", url : "#"},
-                        { linkName : "CPSC Certificates", url : "#"},
-                        { linkName : "Ratings", url : "#"},
-                        { linkName : "Shop Help", url : "#"},
-                        { linkName : "Contact us", url : "#"}
                     ]
                 },
-                {
-                    list: "SITES",
-                    links: [
-                        { linkName : "DC", url : "#"},
-                        { linkName : "MAD Magazine", url : "#"},
-                        { linkName : "DC Kids", url : "#"},
-                        { linkName : "DC Universe", url : "#"},
-                        { linkName : "DC Power Visa", url : "#"}
-                    ]
-                },
+                    {
+                list: "DC",
+                links: [
+                    { linkName : "Terms Of Use", url : "#"},
+                    { linkName : "Privacy Policy (New)", url : "#"},
+                    { linkName : "Ad Choices", url : "#"},
+                    { linkName : "Advertising", url : "#"},
+                    { linkName : "Jobs", url : "#"},
+                    { linkName : "Subscriptions", url : "#"},
+                    { linkName : "Talent Workshops", url : "#"},
+                    { linkName : "CPSC Certificates", url : "#"},
+                    { linkName : "Ratings", url : "#"},
+                    { linkName : "Shop Help", url : "#"},
+                    { linkName : "Contact us", url : "#"}
+                ]
+            },
+            {
+                list: "SITES",
+                links: [
+                    { linkName : "DC", url : "#"},
+                    { linkName : "MAD Magazine", url : "#"},
+                    { linkName : "DC Kids", url : "#"},
+                    { linkName : "DC Universe", url : "#"},
+                    { linkName : "DC Power Visa", url : "#"}
+                ]
+            },
                 
               
                 
@@ -130,11 +143,11 @@ footer{
                 color: $white;
             }
 
-            & > li:last-child{
-                flex-basis: 100%;
-                // border: 1px solid red;
-                
+            & li:first-child ul:last-child{
+                margin-top:.625rem;
             }
+            
+
         }
 
         
