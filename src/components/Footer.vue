@@ -32,14 +32,35 @@
                     </li>
 
                 </ul>
+
+                <div class="logo"></div>
+
+
             
+            </div>
+
+            <div class="bottom">
+
+                <div class="container">
+
+                    <a href="">SIGN-UP NOW!</a>
+                    
+                    <ul>
+                        <li><h3>FOLLOW US</h3></li>
+                        <li v-for="(element, index) in icons" :key="index">
+                            <a href="element.url">
+                                <img  :src="element.logoSrc " :alt="element.logo">
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
             </div>
 
         </div>
 
-        <div class="bottom">
-
-        </div>
+        
     </footer>
 
     
@@ -125,37 +146,84 @@ export default {
 
 footer{
     color:lightgray;
+
     
     .top{
         background-image: url(../assets/img/footer-bg.jpg);
-
-        .main_list{
+        padding: -6.25rem 0;
+       
+        .container{
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .main_list{
+            display: flex;
+            justify-content: flex-start;
             padding: 1.875rem 0;
 
-            li{
-                margin-right: 1.875rem;
-            }
-            h3{
-                font-size: 1.2em;
-                margin-bottom: .625rem ;
-                color: $white;
+                li{
+                    margin-right: 1.875rem;
+                    color: $gray;
+                }
+
+                h3{
+                    font-size: 1.2em;
+                    margin-bottom: .625rem ;
+                    color: $white;
+                }
+
+                & li:first-child ul:last-child{
+                    margin-top:.625rem;
+                }
+
             }
 
-            & li:first-child ul:last-child{
-                margin-top:.625rem;
+            .logo{
+                background-image: url(../assets/img/dc-logo-bg.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                flex-grow: 1;
+                margin-left: 12.5rem;
             }
-            
-
         }
+
+    .bottom{
+        background-color: $primaryBlack;
+        padding: 1.875rem;
+
+        .container{
+            display: flex;
+            align-items: center;
+
+            & > a{
+                color: $white;
+                border: 2px solid $primaryBlue;
+                padding: .625rem 1.25rem
+            }
+
+            ul{
+                display: flex;
+                align-items: center;
+
+                & li:first-child{
+                    color: $primaryBlue;
+                }
+                
+                li{
+                    margin: .625rem;            
+                }
+            }
+        }
+    }
+       
+    
+
 
         
     }
 
-    .bottom{
-        background-color: $primaryBlack;
-    }
+    
 }
 
 
