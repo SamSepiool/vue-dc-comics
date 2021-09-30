@@ -13,6 +13,12 @@
                                 <a>{{link.linkName}}</a>
                             </li>
                         </ul>
+
+                        <ul v-for="(elm, index) in element.subMenu" :key="index" >
+                            <li v-for="(link , order) in elm.links" href="links.url" :key="order">
+                                <a>{{link.linkName}}</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             
@@ -46,8 +52,15 @@ export default {
                         { linkName: "TV", url : "#" },
                         { linkName: "Games", url : "#" },
                         { linkName: "Videos", url : "#" },
-                        { linkName: "News", url : "#" }
+                        { linkName: "News", url : "#" }                       
+                    ],
+                    subMenu: {
+                    list: "SHOP",
+                    links: [
+                        { linkName : "Shop DC", url : "#"},
+                        { linkName : "Shop DC Collectibles", url : "#"}
                     ]
+                },
                 },
                      {
                     list: "DC",
@@ -75,13 +88,7 @@ export default {
                         { linkName : "DC Power Visa", url : "#"}
                     ]
                 },
-                {
-                    list: "SHOP",
-                    links: [
-                        { linkName : "Shop DC", url : "#"},
-                        { linkName : "Shop DC Collectibles", url : "#"}
-                    ]
-                },
+                
               
                 
             ],
@@ -106,12 +113,8 @@ export default {
 footer{
     color:lightgray;
     
-   
-
     .top{
         background-image: url(../assets/img/footer-bg.jpg);
-
-
 
         .main_list{
             display: flex;
@@ -129,7 +132,7 @@ footer{
 
             & > li:last-child{
                 flex-basis: 100%;
-                border: 1px solid red;
+                // border: 1px solid red;
                 
             }
         }
