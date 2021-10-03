@@ -1,8 +1,6 @@
 <template>
-
     <header>
         <div class="container">
-
             <div class="logo">
                 <a href="#"><img src="../assets/img/dc-logo.png" alt=""></a>
             </div>
@@ -11,11 +9,8 @@
                     <li v-for="(element, index) in menu" :key="index"><a :class="{ active : element.current }" :href="element.url">{{element.item}}</a></li>
                 </ul>
             </nav>
-
         </div>
-
-    </header>
-    
+    </header> 
 </template>
 
 <script>
